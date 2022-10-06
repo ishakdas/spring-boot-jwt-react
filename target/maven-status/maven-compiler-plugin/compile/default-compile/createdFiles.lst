@@ -1,9 +1,7 @@
-com\ishak\app\conroller\HelloWorldController.class
 com\ishak\app\entity\Role.class
 com\ishak\app\point\JwtAuthenticationEntryPoint.class
 com\ishak\app\entity\PostMeta.class
 com\ishak\app\filter\JwtRequestFilter.class
-com\ishak\app\response\JwtResponse.class
 com\ishak\app\config\JwtUtil.class
 com\ishak\app\entity\Adress.class
 com\ishak\app\model\RegistrationUser.class
@@ -20,7 +18,9 @@ com\ishak\app\entity\Post.class
 com\ishak\app\repository\UserRepository.class
 com\ishak\app\config\SecurityConfig.class
 com\ishak\app\controller\AuthenticationController.class
+com\ishak\app\controller\ResourceController.class
 com\ishak\app\entity\Adress$AdresTip.class
+com\ishak\app\response\AuthenticationResponse.class
 com\ishak\app\service\JwtUserDetailsService.class
 com\ishak\app\entity\PostComment.class
 com\ishak\app\util\JwtTokenUtil.class

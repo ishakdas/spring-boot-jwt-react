@@ -47,9 +47,9 @@ public class SecurityConfig {
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		http.cors().and().csrf().disable().exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
-		.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().authorizeRequests()
-		.antMatchers("/authenticate", "/helloadmin", "/register", "/getResponse").permitAll().anyRequest()
-		.authenticated();
+				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().authorizeRequests()
+				.antMatchers("/helloadmin").hasRole("ADMIN").antMatchers("/hellouser").hasAnyRole("USER", "ADMIN")
+				.antMatchers("/authenticate", "/register", "/getResponse","/refreshtoken").permitAll().anyRequest().authenticated();
 
 		http.addFilterBefore(authenticationJwtTokenFilter, UsernamePasswordAuthenticationFilter.class);
 

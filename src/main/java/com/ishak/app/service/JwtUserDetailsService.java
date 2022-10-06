@@ -1,8 +1,11 @@
 package com.ishak.app.service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -27,21 +30,24 @@ public class JwtUserDetailsService implements UserDetailsService {
 
 	@Override
 	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
+		List<SimpleGrantedAuthority> roles = null;
 
 		User user = userDao.findByUserName(userName);
-		;
-		if (user == null) {
-			throw new UsernameNotFoundException("User not found with username: " + userName);
+		if (user != null) {
+			roles = Arrays.asList(new SimpleGrantedAuthority(user.getRole()));
+			return new org.springframework.security.core.userdetails.User(user.getUserName(), user.getPasswordHash(),
+					roles);
 		}
-		return new org.springframework.security.core.userdetails.User(user.getUserName(), user.getPasswordHash(),
-				new ArrayList<>());
+		throw new UsernameNotFoundException("User not found with username: " + userName);
+
 	}
 
 	public String save(LoginDto user) {
 		User newUser = new User();
-		newUser.setUserName(user.getUserName());
+		newUser.setUserName(user.getUsername());
+		newUser.setRole(user.getRole());
 		newUser.setPasswordHash(passwordEncoder().encode(user.getPassword()));
-		userDao.save(newUser); 
+		userDao.save(newUser);
 		return newUser.getUserName();
 	}
 }
