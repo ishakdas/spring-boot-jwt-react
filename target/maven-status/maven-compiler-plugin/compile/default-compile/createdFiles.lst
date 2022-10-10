@@ -21,6 +21,7 @@ com\ishak\app\controller\AuthenticationController.class
 com\ishak\app\controller\ResourceController.class
 com\ishak\app\entity\Adress$AdresTip.class
 com\ishak\app\response\AuthenticationResponse.class
+com\ishak\app\entity\MainInfo.class
 com\ishak\app\service\JwtUserDetailsService.class
 com\ishak\app\entity\PostComment.class
 com\ishak\app\util\JwtTokenUtil.class

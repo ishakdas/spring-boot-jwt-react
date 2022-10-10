@@ -3,6 +3,7 @@ C:\Users\User\eclipse-workspace\blog-site\src\main\java\com\ishak\app\request\Jw
 C:\Users\User\eclipse-workspace\blog-site\src\main\java\com\ishak\app\entity\Category.java
 C:\Users\User\eclipse-workspace\blog-site\src\main\java\com\ishak\app\enums\ERole.java
 C:\Users\User\eclipse-workspace\blog-site\src\main\java\com\ishak\app\entity\PostMeta.java
+C:\Users\User\eclipse-workspace\blog-site\src\main\java\com\ishak\app\entity\MainInfo.java
 C:\Users\User\eclipse-workspace\blog-site\src\main\java\com\ishak\app\model\ResponseToken.java
 C:\Users\User\eclipse-workspace\blog-site\src\main\java\com\ishak\app\filter\JwtRequestFilter.java
 C:\Users\User\eclipse-workspace\blog-site\src\main\java\com\ishak\app\entity\Role.java
