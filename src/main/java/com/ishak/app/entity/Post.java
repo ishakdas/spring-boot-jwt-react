@@ -47,8 +47,6 @@ public class Post {
 	@Column(length = 10000, name = "content")
 	private String content;
 
-	@Column(length = 250, name = "link")
-	private String link;
 
 	@Column(length = 100, name = "slug")
 	private String slug;
