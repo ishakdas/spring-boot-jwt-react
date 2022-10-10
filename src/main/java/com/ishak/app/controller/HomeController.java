@@ -17,18 +17,7 @@ public class HomeController {
 	@Autowired
 	private HomeInfoService homeInfoService;
 
-	@RequestMapping(value = "/home", method = RequestMethod.POST)
-	public ResponseEntity<?> homeInfo(@RequestBody LoginDto authenticationRequest) throws Exception {
-		try {
-			HomeInfo homeInfo = homeInfoService.homeInfoAll();
-			return ResponseEntity.ok(homeInfo);
 
-		} catch (Exception e) {
-			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e);
-		}
-
-	}
-	
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public ResponseEntity<?> homeInfo1() throws Exception {
 		try {
