@@ -1,19 +1,12 @@
 package com.ishak.app.dto;
 
-import java.util.List;
-
 public class BlogDTO {
 	private String title;
-	
 	private String date;
-	
-	private List<String> tags;
-	
-	private String summary;
-	
+	private String author;
 	private String slug;
-	
-	private String fileName;
+	private String notion_link;
+	private String image;
 
 	public String getTitle() {
 		return title;
@@ -31,20 +24,12 @@ public class BlogDTO {
 		this.date = date;
 	}
 
-	public List<String> getTags() {
-		return tags;
+	public String getAuthor() {
+		return author;
 	}
 
-	public void setTags(List<String> tags) {
-		this.tags = tags;
-	}
-
-	public String getSummary() {
-		return summary;
-	}
-
-	public void setSummary(String summary) {
-		this.summary = summary;
+	public void setAuthor(String author) {
+		this.author = author;
 	}
 
 	public String getSlug() {
@@ -55,12 +40,19 @@ public class BlogDTO {
 		this.slug = slug;
 	}
 
-	public String getFileName() {
-		return fileName;
+	public String getNotion_link() {
+		return notion_link;
 	}
 
-	public void setFileName(String fileName) {
-		this.fileName = fileName;
+	public void setNotion_link(String notion_link) {
+		this.notion_link = notion_link;
 	}
 
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
 }

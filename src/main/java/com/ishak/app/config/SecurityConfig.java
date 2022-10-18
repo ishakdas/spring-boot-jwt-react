@@ -47,7 +47,7 @@ public class SecurityConfig {
 		http.cors().and().csrf().disable().exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
 				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().authorizeRequests()
 				.antMatchers("/helloadmin").hasRole("ADMIN").antMatchers("/hellouser").hasAnyRole("USER", "ADMIN")
-				.antMatchers("/authenticate", "/register", "/getResponse","/refreshtoken","/home","/blog").permitAll().anyRequest().authenticated();
+				.antMatchers("/authenticate", "/register", "/getResponse","/refreshtoken","/home","/blog","/blog/{slugName}").permitAll().anyRequest().authenticated();
 
 		http.addFilterBefore(authenticationJwtTokenFilter, UsernamePasswordAuthenticationFilter.class);
 

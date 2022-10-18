@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ishak.app.entity.HomeInfo;
 import com.ishak.app.entity.Post;
 import com.ishak.app.repository.BlogRepository;
 
@@ -18,6 +17,11 @@ public class BlogService {
 	public List<Post> getAllBlogs() {
 		List<Post> posts = (List<Post>) blogRepository.findAll();
 		return posts;
+	}
+
+	public Post getAllBlogBySlug(String slug) {
+		Post post = blogRepository.findBySlug(slug);
+		return post;
 	}
 
 }

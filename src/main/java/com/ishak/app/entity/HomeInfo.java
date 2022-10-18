@@ -29,11 +29,14 @@ public class HomeInfo {
 	@GeneratedValue(generator = "seq_home_info", strategy = GenerationType.SEQUENCE)
 	private Long id;
 	
-	@Column(length = 500, name = "title")
-	private String title;
+	@Column(length = 150, name = "name")
+	private String name;
 	
-	@Column(length = 500, name = "subtitle")
-	private String subtitle;
+	@Column(length = 100, name = "short_description")
+	private String shortDescription;
+	
+	@Column(length = 500, name = "description")
+	private String description;
 	
 	
 

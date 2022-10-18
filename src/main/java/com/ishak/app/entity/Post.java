@@ -53,9 +53,15 @@ public class Post {
 
 	@Column(length = 1000, name = "summary")
 	private String summary;
+	
+	@Column(length = 1000, name = "image")
+	private String image;
 
 	@Column(name = "published")
 	private Boolean published;
+	
+	@Column(name = "notion_link")
+	private String notionLink;
 
 	@ManyToMany
 	@JoinTable(name = "post_tag", joinColumns = @JoinColumn(name = "post_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "tag_id", referencedColumnName = "id"))
@@ -68,7 +74,7 @@ public class Post {
 	@Column(name = "created_date_at", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
 	private Date createdDateAt;
 
-	@Column(name = "update_date_at")
+	@Column(name = "update_date_at",columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
 	private Date updateDateAt;
 
 	@Column(name = "publish_date_at")
