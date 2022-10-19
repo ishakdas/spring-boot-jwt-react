@@ -38,6 +38,12 @@ public class HomeInfo {
 	@Column(length = 500, name = "description")
 	private String description;
 	
+	@Column(length = 500, name = "profile_image")
+	private String profile;
+	
+	@Column(length = 120, name = "email")
+	private String email;
+	
 	
 
 }
