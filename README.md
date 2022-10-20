@@ -52,3 +52,49 @@ Used without tokens
     
 # You can run and open terminal
     curl http://localhost:8080/blog
+    
+    
+
+----
+
+	@RequestMapping(value = "/home", method = RequestMethod.GET)
+	public ResponseEntity<?> homeInfo1() throws Exception {
+		try {
+			HomeInfo homeInfo = homeInfoService.homeInfoAll();
+			return ResponseEntity.ok(homeInfo);
+
+		} catch (Exception e) {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e);
+		}
+
+	}
+}
+----
+
+# For Example
+
+/blog
+```javascript
+[
+    {
+        "title": "Redis Güvenlik Sıkılaştırmaları",
+        "date": "2022-10-20 00:26:40.931",
+        "author": "İshak Akdaş",
+        "slug": "Redis-Guvenlik-Sikilastirmalari",
+        "notion_link": "https://elated-tarsal-3d8.notion.site/Redis-G-venlik-S-k-la-t-rmalar-302af50ba8114acf97e5197ab9933694",
+        "image": "https://miro.medium.com/max/828/0*JCEb87dJnTyMjDUw"
+    }
+]
+```
+
+/home
+```javascript
+{
+    "id": 1,
+    "name": "İshak Akdaş",
+    "shortDescription": "I'm a Full Stack developer",
+    "description": "I'm a Full Stack developer with experience in DevOps, Backend, Frontend and mobile development.",
+    "profile": "/me.png",
+    "email": "mailto:furkan.ishack@gmail.com"
+}
+```
